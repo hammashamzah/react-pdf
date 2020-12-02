@@ -6,7 +6,7 @@
   "module": "dist/esm/entry.js",
   "source": "src/entry.js",
   "scripts": {
-    "prepare": "yarn run build",
+    "prepare": "npm run build",
     "build": "yarn build-js-all && yarn copy-styles",
     "build-js-all": "yarn build-js-esm && yarn build-js-umd",
     "build-js-esm": "BABEL_ENV=production-esm babel src -d dist/esm --ignore \"**/*.spec.js,**/*.spec.jsx\"",
