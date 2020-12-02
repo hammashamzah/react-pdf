@@ -6,7 +6,7 @@
   "module": "dist/esm/entry.js",
   "source": "src/entry.js",
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "yarn clean && yarn build",
     "build": "yarn build-js-all && yarn copy-styles",
     "build-js-all": "yarn build-js-esm && yarn build-js-umd",
     "build-js-esm": "BABEL_ENV=production-esm babel src -d dist/esm --ignore \"**/*.spec.js,**/*.spec.jsx\"",
@@ -104,7 +104,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
     "babel-eslint": "^10.0.0",
     "enzyme": "^3.10.0",
-    "eslint": "^7.12.0",
+    "eslint": "^7.14.0",
     "eslint-config-wojtekmaj": "^0.5.0",
     "jest": "^26.0.0",
     "react": "^17.0.0",
