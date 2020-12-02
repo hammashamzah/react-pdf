@@ -194,7 +194,7 @@ export class PageImgInternal extends PureComponent {
       default:
         return (
           <div
-            classname="react-pdf__Page__not__img"
+            className="react-pdf__Page__not__img"
             style={{
               display: 'block',
               userSelect: 'none',
