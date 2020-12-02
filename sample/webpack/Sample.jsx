@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
+import { pdfjs, Document, Page } from 'react-pdf/dist/esm/entry';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 import './Sample.less';
 
@@ -40,6 +42,7 @@ export default function Sample() {
             file={file}
             onLoadSuccess={onDocumentLoadSuccess}
             options={options}
+            renderMode="img"
           >
             {
               Array.from(
@@ -48,6 +51,7 @@ export default function Sample() {
                   <Page
                     key={`page_${index + 1}`}
                     pageNumber={index + 1}
+                    scale={0.1}
                   />
                 ),
               )

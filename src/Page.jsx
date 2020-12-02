@@ -11,6 +11,7 @@ import PageContext from './PageContext';
 import Message from './Message';
 import PageCanvas from './Page/PageCanvas';
 import PageSVG from './Page/PageSVG';
+import PageImg from './Page/PageImg';
 import TextLayer from './Page/TextLayer';
 import AnnotationLayer from './Page/AnnotationLayer';
 
@@ -267,6 +268,10 @@ export class PageInternal extends PureComponent {
         return (
           <PageSVG key={`${this.pageKeyNoScale}_svg`} />
         );
+      case 'img':
+        return (
+          <PageImg key={`${this.pageKey}_img`} />
+        );
       case 'canvas':
       default:
         return (
@@ -276,9 +281,9 @@ export class PageInternal extends PureComponent {
   }
 
   renderTextLayer() {
-    const { renderTextLayer } = this.props;
+    const { renderTextLayer, renderMode } = this.props;
 
-    if (!renderTextLayer) {
+    if (!renderTextLayer || renderMode === 'img') {
       return null;
     }
 
