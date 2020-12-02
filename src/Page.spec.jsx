@@ -509,6 +509,28 @@ describe('Page', () => {
       expect(pageCanvas).toHaveLength(1);
     });
 
+    it('requests page to be rendered in img mode when given renderMode = "img"', async () => {
+      const { func: onLoadSuccess, promise: onLoadSuccessPromise } = makeAsyncCallback();
+
+      const component = shallow(
+        <Page
+          onLoadSuccess={onLoadSuccess}
+          pageIndex={0}
+          pdf={pdf}
+          renderMode="img"
+        />
+      );
+
+      expect.assertions(1);
+
+      await onLoadSuccessPromise;
+
+      component.update();
+
+      const pageImg = component.find('pageImg');
+      expect(pageImg).toHaveLength(1);
+    });
+
     it('requests page to be rendered in SVG mode when given renderMode = "svg"', async () => {
       const { func: onLoadSuccess, promise: onLoadSuccessPromise } = makeAsyncCallback();
 

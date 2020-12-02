@@ -228,7 +228,7 @@ Loads a document passed using `file` prop.
 |onSourceError|Function called in case of an error while retrieving document source from `file` prop.|n/a|`(error) => alert('Error while retrieving document source! ' + error.message)`|
 |onSourceSuccess|Function called when document source is successfully retrieved from `file` prop.|n/a|`() => alert('Document source retrieved!')`|
 |options|An object in which additional parameters to be passed to PDF.js can be defined. For a full list of possible parameters, check [PDF.js documentation on DocumentInitParameters](https://mozilla.github.io/pdf.js/api/draft/module-pdfjsLib.html#~DocumentInitParameters).|n/a|`{ cMapUrl: 'cmaps/', cMapPacked: true }`|
-|renderMode|Rendering mode of the document. Can be `"canvas"`, `"svg"` or `"none"`.|`"canvas"`|`"svg"`|
+|renderMode|Rendering mode of the document. Can be `"canvas"`, `"svg"`, `"img"` or `"none"`.|`"canvas"`|`"svg"`|
 |rotate|Rotation of the document in degrees. If provided, will change rotation globally, even for the pages which were given `rotate` prop of their own. `90` = rotated to the right, `180` = upside down, `270` = rotated to the left.|n/a|`90`|
 
 ### Page
@@ -259,7 +259,7 @@ Displays a page. Should be placed inside `<Document />`. Alternatively, it can h
 |pageNumber|Which page from PDF file should be displayed, by page number. If provided, `pageIndex` prop will be ignored.|`1`|`2`|
 |renderAnnotationLayer|Whether annotations (e.g. links) should be rendered.|`true`|`false`|
 |renderInteractiveForms|Whether interactive forms should be rendered. `renderAnnotationLayer` prop must be set to `true`.|`false`|`true`|
-|renderMode|Rendering mode of the document. Can be `"canvas"`, `"svg"` or `"none"`.|`"canvas"`|`"svg"`|
+|renderMode|Rendering mode of the document. Can be `"canvas"`, `"svg"`, `"img"` or `"none"`.|`"canvas"`|`"svg"`|
 |renderTextLayer|Whether a text layer should be rendered.|`true`|`false`|
 |rotate|Rotation of the page in degrees. `90` = rotated to the right, `180` = upside down, `270` = rotated to the left.|Page's default setting, usually `0`|`90`|
 |scale|Page scale.|`1.0`|`0.5`|
