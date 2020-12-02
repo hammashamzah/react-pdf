@@ -6,7 +6,7 @@
   "module": "dist/esm/entry.js",
   "source": "src/entry.js",
   "scripts": {
-    "prepare": "yarn run build",
+    "prepare": "yarn build",
     "build": "yarn build-js-all && yarn copy-styles",
     "build-js-all": "yarn build-js-esm && yarn build-js-umd",
     "build-js-esm": "BABEL_ENV=production-esm babel src -d dist/esm --ignore \"**/*.spec.js,**/*.spec.jsx\"",
@@ -86,7 +86,6 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "canvas": "^2.6.1",
     "make-cancellable-promise": "^1.0.0",
     "make-event-props": "^1.1.0",
     "merge-class-names": "^1.1.1",
